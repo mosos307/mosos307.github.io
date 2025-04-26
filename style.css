@@ -1,0 +1,197 @@
+/* estilos.css */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0d0d0d;
+  color: #00ffe1;
+  font-family: 'Share Tech Mono', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  animation: fadeIn 2s ease-in;
+}
+
+.container {
+  background: rgba(20, 20, 20, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00ffe1;
+  max-width: 800px;
+  width: 100%;
+  animation: slideDown 1s ease-out;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #9a00ff;
+  font-size: 1.8em;
+}
+
+textarea, select {
+  width: 100%;
+  padding: 10px;
+  background: #1a1a1a;
+  border: 1px solid #00ffe1;
+  border-radius: 8px;
+  color: #00ffe1;
+  font-size: 1em;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  resize: vertical;
+  min-height: 60px;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+textarea:focus, select:focus {
+  outline: none;
+  background: #222;
+  box-shadow: 0 0 10px #00ffe1;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 12px;
+  background: linear-gradient(45deg, #00ffe1, #9a00ff);
+  border: none;
+  border-radius: 8px;
+  color: #0d0d0d;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.2s ease, box-shadow 0.4s ease;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #9a00ff, #00ffe1);
+  transform: scale(1.05);
+}
+
+label {
+  display: block;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+
+.icono {
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  vertical-align: middle;
+  animation: pulse 2s infinite;
+}
+
+.iconito {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.boton-icon {
+  width: 22px;
+  height: 22px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Glow efecto cuando copias */
+.copiado {
+  box-shadow: 0 0 20px #00ff88, 0 0 30px #00ff88;
+  transform: scale(1.1);
+}
+
+/* Responsive real */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+.notificacion {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #00ff88;
+    color: #0d0d0d;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88;
+    font-weight: bold;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1em;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.5s, transform 0.5s;
+}
+  
+.notificacion.desaparecer {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+  
+/* Estilos para las instrucciones */
+.instrucciones {
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ffe1;
+    margin-bottom: 20px;
+  }
+  
+  .instrucciones h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #00ffe1;
+  }
+  
+  .instrucciones ol {
+    padding-left: 20px;
+    font-size: 1em;
+    color: #fff;
+  }
+  
+  .instrucciones ol li {
+    margin-bottom: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .instrucciones h2 {
+      font-size: 1.3em;
+    }
+  
+    .instrucciones ol li {
+      font-size: 0.9em;
+    }
+  }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modificar enc - Modo Incógnito</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <div class="container">
+    <h1><i data-lucide="eye-off" class="icono"></i> Ver noticias</h1>
+
+    <!-- Instrucciones paso a paso -->
+    <div class="instrucciones">
+      <h2>Instrucciones paso a paso</h2>
+      <ol>
+        <li><strong>Paso 1:</strong> Abre el boletín de un periodo que puedas abrir.</li>
+        <li><strong>Paso 2:</strong> Copia la URL completa del boletín.</li>
+        <li><strong>Paso 3:</strong> Pega la URL copiada en el campo "URL completa" de este sitio.</li>
+        <li><strong>Paso 4:</strong> Selecciona el periodo del boletin que quieres consultar en el menu desplegable.</li>
+        <li><strong>Paso 5:</strong> Haz clic en el botón "Obtener URL del periodo seleccionado" para generar la nueva URL.</li>
+        <li><strong>Paso 6:</strong> La nueva URL estará lista para usar, puedes copiarla haciendo clic en "Copiar URL Final".</li>
+        <li><strong>Paso 7:</strong> ahora pega esta nueva URL en tu navegador y listo.</li>
+      </ol>
+    </div>
+
+    <!-- Contenido principal -->
+    <label><i data-lucide="link" class="iconito"></i> URL completa:</label>
+    <textarea id="urlInput" placeholder="Pega aquí la URL completa..."></textarea>
+    
+    <label><i data-lucide="calendar-days" class="iconito"></i> Selecciona el periodo:</label>
+    <select id="periodoSelect">
+        <option value="1">Periodo 1</option>
+        <option value="2">Periodo 2</option>
+        <option value="3">Periodo 3</option>
+        <option value="4">Periodo 4</option>
+    </select>
+    
+    <button onclick="obtenerNuevaUrl()"><i data-lucide="file-search" class="boton-icon"></i> Obtener URL del periodo seleccionado</button>
+    
+    <label><i data-lucide="globe" class="iconito"></i> Nueva URL lista:</label>
+    <textarea id="urlFinal" placeholder="Aquí estará la URL lista para usar..." readonly></textarea>
+
+    <button onclick="copiarUrl()" id="copiarBtn"><i data-lucide="clipboard-copy" class="boton-icon"></i> Copiar URL Final</button>
+  </div>
+
+  <audio id="copiadoSound" src="https://www.freesoundslibrary.com/wp-content/uploads/2020/06/Beep-Sound.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
